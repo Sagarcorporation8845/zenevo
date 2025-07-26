@@ -2,12 +2,12 @@ import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angula
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import * as THREE from 'three';
-import { ImageIconComponent } from '../image-icon/image-icon.component';
+import { NgIconComponent } from '@ng-icons/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, ImageIconComponent],
+  imports: [CommonModule, RouterModule, NgIconComponent],
   template: `
     <section class="hero">
       <canvas #threeCanvas class="three-canvas"></canvas>
@@ -35,7 +35,7 @@ import { ImageIconComponent } from '../image-icon/image-icon.component';
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
           <div class="card feature-card" *ngFor="let feature of features">
             <div class="feature-icon">
-              <app-image-icon [icon]="feature.icon" size="feature-icon"></app-image-icon>
+                <ng-icon [name]="feature.icon" size="2rem" color="var(--bg-primary)"></ng-icon>
             </div>
             <h3>{{ feature.title }}</h3>
             <p>{{ feature.description }}</p>
@@ -208,17 +208,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   
   features = [
     {
-      icon: '🚀',
+      icon: 'phosphorRocket',
       title: 'Next-Gen Innovation',
       description: 'Cutting-edge technology solutions that push the boundaries of what\'s possible.'
     },
     {
-      icon: '🧠',
+      icon: 'phosphorBrain',
       title: 'AI-Powered Systems',      
       description: 'Intelligent automation and machine learning solutions for the future.'
     },
     {
-      icon: '🔧',
+      icon: 'phosphorWrench',
       title: 'Custom Engineering',
       description: 'Tailored hardware and software solutions designed for your specific needs.'
     }

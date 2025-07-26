@@ -4,6 +4,26 @@ import { RouterOutlet, provideRouter } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { routes } from './app/app.routes';
 import { NavbarComponent } from './app/components/navbar/navbar.component';
+import { provideIcons } from '@ng-icons/core'; // Corrected function name
+
+// Corrected icon import names
+import { 
+    phosphorRocket, 
+    phosphorBrain, 
+    phosphorWrench, 
+    phosphorBriefcase, 
+    phosphorTwitterLogo, 
+    phosphorComputerTower,
+    phosphorBook,
+    phosphorGraduationCap,
+    phosphorPalette,
+    phosphorMegaphone,
+    phosphorTarget,
+    phosphorGlobe,
+    phosphorHandshake,
+    phosphorChartLineUp,
+    phosphorLock
+} from '@ng-icons/phosphor-icons/regular';
 
 @Component({
   selector: 'app-root',
@@ -193,6 +213,25 @@ export class App {}
 
 bootstrapApplication(App, {
   providers: [
-    provideRouter(routes)
+    provideRouter(routes),
+    // Corrected provider function and icon names
+    provideIcons({
+        phosphorRocket,
+        phosphorBrain,
+        phosphorWrench,
+        phosphorBriefcase,
+        phosphorTwitterLogo,
+        phosphorComputerTower,
+        phosphorBook,
+        phosphorGraduationCap,
+        phosphorPalette,
+        //phosphorMask,
+        phosphorMegaphone,
+        phosphorTarget,
+        phosphorGlobe,
+        phosphorHandshake,
+        phosphorChartLineUp,
+        phosphorLock
+    })
   ]
 });

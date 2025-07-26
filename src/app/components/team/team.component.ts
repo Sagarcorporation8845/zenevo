@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImageIconComponent } from '../image-icon/image-icon.component';
 import { ProfileImageComponent } from '../profile-image/profile-image.component';
+import { NgIconComponent } from '@ng-icons/core';
 
 @Component({
   selector: 'app-team',
   standalone: true,
-  imports: [CommonModule, ImageIconComponent, ProfileImageComponent],
+  imports: [CommonModule, ProfileImageComponent, NgIconComponent],
   template: `
     <section class="team-hero section">
       <div class="container">
@@ -36,7 +36,7 @@ import { ProfileImageComponent } from '../profile-image/profile-image.component'
                 <a *ngFor="let social of member.social" 
                    [href]="social.url" class="social-link" 
                    [attr.aria-label]="social.platform">
-                  <app-image-icon [icon]="social.icon" size="small"></app-image-icon>
+                   <ng-icon [name]="social.icon" size="1.2rem"></ng-icon>
                 </a>
               </div>
             </div>
@@ -51,7 +51,7 @@ import { ProfileImageComponent } from '../profile-image/profile-image.component'
         <div class="values-grid">
           <div class="value-item" *ngFor="let value of teamValues">
             <div class="value-icon">
-              <app-image-icon [icon]="value.icon" size="large"></app-image-icon>
+                <ng-icon [name]="value.icon" size="3rem"></ng-icon>
             </div>
             <h4>{{ value.title }}</h4>
             <p>{{ value.description }}</p>
@@ -223,6 +223,7 @@ import { ProfileImageComponent } from '../profile-image/profile-image.component'
     .value-icon {
       font-size: 3rem;
       margin-bottom: var(--space-md);
+      color: var(--accent-teal); /* Added color for the icon */
     }
 
     .join-team {
@@ -351,9 +352,9 @@ export class TeamComponent {
       skills: ['AI/ML', 'Quantum Computing', 'Leadership', 'Innovation Strategy'],
       imageUrl: '',
       social: [
-        { platform: 'LinkedIn', icon: '💼', url: '#' },
-        { platform: 'Twitter', icon: '🐦', url: '#' },
-        { platform: 'GitHub', icon: '💻', url: '#' }
+        { platform: 'LinkedIn', icon: 'phosphorBriefcase', url: '#' },
+        { platform: 'Twitter', icon: 'phosphorTwitterLogo', url: '#' },
+        { platform: 'GitHub', icon: 'phosphorComputerTower', url: '#' }
       ]
     },
     {
@@ -363,9 +364,9 @@ export class TeamComponent {
       skills: ['Deep Learning', 'Neural Networks', 'Python', 'TensorFlow'],
       imageUrl: '',
       social: [
-        { platform: 'LinkedIn', icon: '💼', url: '#' },
-        { platform: 'GitHub', icon: '💻', url: '#' },
-        { platform: 'Research', icon: '📚', url: '#' }
+        { platform: 'LinkedIn', icon: 'phosphorBriefcase', url: '#' },
+        { platform: 'GitHub', icon: 'phosphorComputerTower', url: '#' },
+        { platform: 'Research', icon: 'phosphorBook', url: '#' }
       ]
     },
     {
@@ -375,9 +376,9 @@ export class TeamComponent {
       skills: ['IoT', 'Embedded Systems', 'Cloud Architecture', 'Security'],
       imageUrl: '',
       social: [
-        { platform: 'LinkedIn', icon: '💼', url: '#' },
-        { platform: 'Twitter', icon: '🐦', url: '#' },
-        { platform: 'Portfolio', icon: '🌐', url: '#' }
+        { platform: 'LinkedIn', icon: 'phosphorBriefcase', url: '#' },
+        { platform: 'Twitter', icon: 'phosphorTwitterLogo', url: '#' },
+        { platform: 'Portfolio', icon: 'phosphorGlobe', url: '#' }
       ]
     },
     {
@@ -387,9 +388,9 @@ export class TeamComponent {
       skills: ['Quantum Algorithms', 'Cryptography', 'Research', 'Publications'],
       imageUrl: '',
       social: [
-        { platform: 'LinkedIn', icon: '💼', url: '#' },
-        { platform: 'Research', icon: '📚', url: '#' },
-        { platform: 'Academia', icon: '🎓', url: '#' }
+        { platform: 'LinkedIn', icon: 'phosphorBriefcase', url: '#' },
+        { platform: 'Research', icon: 'phosphorBook', url: '#' },
+        { platform: 'Academia', icon: 'phosphorGraduationCap', url: '#' }
       ]
     },
     {
@@ -399,9 +400,9 @@ export class TeamComponent {
       skills: ['UX Design', 'Prototyping', 'User Research', 'Innovation'],
       imageUrl: '',
       social: [
-        { platform: 'LinkedIn', icon: '💼', url: '#' },
-        { platform: 'Dribbble', icon: '🎨', url: '#' },
-        { platform: 'Behance', icon: '🎭', url: '#' }
+        { platform: 'LinkedIn', icon: 'phosphorBriefcase', url: '#' },
+        { platform: 'Dribbble', icon: 'phosphorPalette', url: '#' },
+        { platform: 'Behance', icon: 'phosphorMask', url: '#' }
       ]
     },
     {
@@ -411,31 +412,31 @@ export class TeamComponent {
       skills: ['Cybersecurity', 'Ethical Hacking', 'Compliance', 'Risk Management'],
       imageUrl: '',
       social: [
-        { platform: 'LinkedIn', icon: '💼', url: '#' },
-        { platform: 'Security Blog', icon: '🔒', url: '#' },
-        { platform: 'Conferences', icon: '📢', url: '#' }
+        { platform: 'LinkedIn', icon: 'phosphorBriefcase', url: '#' },
+        { platform: 'Security Blog', icon: 'phosphorLock', url: '#' },
+        { platform: 'Conferences', icon: 'phosphorMegaphone', url: '#' }
       ]
     }
   ];
 
   teamValues = [
     {
-      icon: '🚀',
+      icon: 'phosphorRocket',
       title: 'Innovation Excellence',
       description: 'We constantly push boundaries and explore new possibilities in technology.'
     },
     {
-      icon: '🤝',
+      icon: 'phosphorHandshake',
       title: 'Collaborative Spirit',
       description: 'Our diverse team works together to achieve extraordinary results.'
     },
     {
-      icon: '🎯',
+      icon: 'phosphorTarget',
       title: 'Mission-Driven',
       description: 'Every team member is committed to our vision of technological advancement.'
     },
     {
-      icon: '📈',
+      icon: 'phosphorChartLineUp',
       title: 'Continuous Growth',
       description: 'We invest in our team\'s development and encourage lifelong learning.'
     }
